@@ -1,0 +1,100 @@
+{
+  "appId": "com.oppo.labelstudio",
+  "productName": "OPPO Label Studio",
+  "electronVersion": "31.0.0",
+  "copyright": "Copyright © 2026 OPPO Services",
+  "directories": {
+    "output": "release",
+    "buildResources": "build"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "public/**/*",
+    "build/**/*",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "build/icon.png",
+      "to": "icon.png"
+    },
+    {
+      "from": "build/icon.ico",
+      "to": "icon.ico"
+    }
+  ],
+  "publish": {
+    "provider": "github",
+    "owner": "philiptrinh30",
+    "repo": "oppo-label-studio"
+  },
+  "linux": {
+    "icon": "build/icons",
+    "target": [
+      {
+        "target": "AppImage",
+        "arch": [
+          "x64"
+        ]
+      },
+      {
+        "target": "deb",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "category": "Office",
+    "description": "Trình In Tem Linh Kiện Khổ 3x2 inch - Barcode & QR Label Studio",
+    "maintainer": "OPPO Services <philiptrinh30@gmail.com>",
+    "executableName": "oppo-label-studio"
+  },
+  "deb": {
+    "artifactName": "OPPO-Label-Studio-${version}.${ext}",
+    "depends": [
+      "gconf2",
+      "gconf-service",
+      "libnotify4",
+      "libappindicator1",
+      "libxtst6",
+      "libnss3"
+    ]
+  },
+  "win": {
+    "icon": "build/icon.ico",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      },
+      {
+        "target": "portable",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "executableName": "OPPO-Label-Studio",
+    "requestedExecutionLevel": "asInvoker"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": "always",
+    "createStartMenuShortcut": true,
+    "shortcutName": "OPPO Label Studio",
+    "installerIcon": "build/icon.ico",
+    "uninstallerIcon": "build/icon.ico",
+    "artifactName": "OPPO-Label-Studio-Setup-${version}.${ext}",
+    "deleteAppDataOnUninstall": false
+  },
+  "portable": {
+    "artifactName": "OPPO-Label-Studio-Portable-${version}.${ext}",
+    "requestExecutionLevel": "user"
+  }
+}

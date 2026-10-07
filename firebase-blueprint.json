@@ -1,0 +1,177 @@
+{
+  "entities": {
+    "ShortageBooking": {
+      "title": "ShortageBooking",
+      "description": "A part shortage booking ticket with 4-step progress and customer info",
+      "type": "object",
+      "properties": {
+        "ticketNumber": { "type": "string", "maxLength": 50 },
+        "partCode": { "type": "string", "maxLength": 100 },
+        "partName": { "type": "string", "maxLength": 200 },
+        "model": { "type": "string", "maxLength": 100 },
+        "customerName": { "type": "string", "maxLength": 100 },
+        "customerPhone": { "type": "string", "maxLength": 30 },
+        "bookingDate": { "type": "string", "maxLength": 30 },
+        "stockedInDate": { "type": "string", "maxLength": 30 },
+        "calledCustomerDate": { "type": "string", "maxLength": 30 },
+        "customerArrivedDate": { "type": "string", "maxLength": 30 },
+        "creatorTechnician": { "type": "string", "maxLength": 100 },
+        "technicianName": { "type": "string", "maxLength": 100 },
+        "status": {
+          "type": "string",
+          "enum": ["da_tao_phieu", "da_xin_lk", "da_nhap_kho", "da_goi_kh", "da_hoan_tat"]
+        },
+        "location": { "type": "string", "maxLength": 50 },
+        "note": { "type": "string", "maxLength": 500 },
+        "updatedBy": { "type": "string", "maxLength": 100 },
+        "cancelRequested": { "type": "boolean" },
+        "cancelReason": { "type": "string", "maxLength": 200 },
+        "cancelRequestedBy": { "type": "string", "maxLength": 100 },
+        "cancelRequestedAt": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["ticketNumber", "partCode", "partName", "customerName", "status"]
+    },
+    "LabelCatalogItem": {
+      "title": "LabelCatalogItem",
+      "description": "Master component label data synced from Admin to all staff devices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "code": { "type": "string", "maxLength": 100 },
+        "name": { "type": "string", "maxLength": 200 },
+        "model": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 100 },
+        "location": { "type": "string", "maxLength": 50 },
+        "quantity": { "type": "number" },
+        "note": { "type": "string", "maxLength": 200 },
+        "updatedBy": { "type": "string", "maxLength": 100 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "code", "name"]
+    },
+    "UserSession": {
+      "title": "UserSession",
+      "description": "Information about a user or staff member accessing the system with approval status and password",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "username": { "type": "string", "maxLength": 50 },
+        "password": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 120 },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "enum": ["admin", "staff"] },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "approvedBy": { "type": "string", "maxLength": 100 },
+        "approvedAt": { "type": "string", "maxLength": 50 },
+        "lastActive": { "type": "string", "maxLength": 50 },
+        "online": { "type": "boolean" },
+        "device": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["uid", "displayName", "role"]
+    },
+    "ActivityLog": {
+      "title": "ActivityLog",
+      "description": "Audit trail log tracking actions performed across users",
+      "type": "object",
+      "properties": {
+        "ticketNumber": { "type": "string", "maxLength": 50 },
+        "action": { "type": "string", "maxLength": 100 },
+        "userName": { "type": "string", "maxLength": 100 },
+        "userEmail": { "type": "string", "maxLength": 120 },
+        "timestamp": { "type": "string", "maxLength": 50 },
+        "details": { "type": "string", "maxLength": 300 }
+      },
+      "required": ["action", "userName", "timestamp"]
+    },
+    "TechnicianItem": {
+      "title": "TechnicianItem",
+      "description": "Technician directory item with tech ID code and admin approval workflow",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "techId": { "type": "string", "maxLength": 50 },
+        "name": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "department": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "enum": ["active", "pending", "rejected"] },
+        "requestedBy": { "type": "string", "maxLength": 100 },
+        "requestedAt": { "type": "string", "maxLength": 50 },
+        "approvedBy": { "type": "string", "maxLength": 100 },
+        "approvedAt": { "type": "string", "maxLength": 50 },
+        "note": { "type": "string", "maxLength": 300 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "techId", "name", "status"]
+    },
+    "DeviceIotBooking": {
+      "title": "DeviceIotBooking",
+      "description": "Device & IOT exchange and customer loan bookings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "ticketNumber": { "type": "string", "maxLength": 60 },
+        "customerName": { "type": "string", "maxLength": 120 },
+        "customerPhone": { "type": "string", "maxLength": 30 },
+        "deviceModel": { "type": "string", "maxLength": 100 },
+        "deviceName": { "type": "string", "maxLength": 150 },
+        "skuCode": { "type": "string", "maxLength": 60 },
+        "imeiOrIot": { "type": "string", "maxLength": 60 },
+        "deviceCategory": { "type": "string", "maxLength": 30 },
+        "flowType": { "type": "string", "maxLength": 30 },
+        "status": { "type": "string", "maxLength": 30 },
+        "bookingDate": { "type": "string", "maxLength": 50 },
+        "location": { "type": "string", "maxLength": 100 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 },
+        "warrantyCenterName": { "type": "string", "maxLength": 150 },
+        "warrantyCenterPhone": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "ticketNumber", "customerName", "customerPhone", "deviceModel", "deviceName", "status", "bookingDate"]
+    },
+    "WarrantyCenter": {
+      "title": "WarrantyCenter",
+      "description": "OPPO warranty center profiles created by Admin",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "name", "phone"]
+    }
+  },
+  "firestore": {
+    "/shortages/{shortageId}": {
+      "schema": { "$ref": "#/entities/ShortageBooking" },
+      "description": "Collection of all part shortage booking records"
+    },
+    "/device_iot_bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/DeviceIotBooking" },
+      "description": "Device and IOT bookings collection"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserSession" },
+      "description": "Active staff and admin user directory"
+    },
+    "/technicians/{technicianId}": {
+      "schema": { "$ref": "#/entities/TechnicianItem" },
+      "description": "Directory of technicians and staff-submitted technician requests"
+    },
+    "/label_catalog/{labelId}": {
+      "schema": { "$ref": "#/entities/LabelCatalogItem" },
+      "description": "Master component catalog items synced across all devices"
+    },
+    "/activity_logs/{logId}": {
+      "schema": { "$ref": "#/entities/ActivityLog" },
+      "description": "Audit log stream for tracking changes"
+    },
+    "/warranty_centers/{centerId}": {
+      "schema": { "$ref": "#/entities/WarrantyCenter" },
+      "description": "Warranty center locations created and managed by Admin"
+    }
+  }
+}

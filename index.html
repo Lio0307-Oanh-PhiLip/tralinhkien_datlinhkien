@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>HCM4 tra linh kiện in tem & đặt chờ linh kiện</title>
+    <meta name="description" content="Phần mềm in tem linh kiện, mã vạch Code128, QR Code khổ 3x2 inch và quản lý đặt chờ thiếu linh kiện HCM4 Phú Lâm" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="HCM4 Oppo" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./pwa-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./pwa-512x512.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        var ow = console.warn;
+        var oe = console.error;
+        function isIgnored(msg) {
+          if (!msg) return false;
+          var s = String(msg).toLowerCase();
+          return s.indexOf('disconnecting idle stream') !== -1 ||
+                 s.indexOf('timed out waiting for new targets') !== -1 ||
+                 s.indexOf("listen' stream") !== -1 ||
+                 s.indexOf('grpcconnection rpc') !== -1 ||
+                 s.indexOf('maximum backoff delay') !== -1 ||
+                 s.indexOf('resource-exhausted') !== -1 ||
+                 s.indexOf('quota limit exceeded') !== -1 ||
+                 (s.indexOf('firestore') !== -1 && s.indexOf('stream') !== -1 && s.indexOf('cancelled') !== -1);
+        }
+        console.warn = function() {
+          var all = Array.prototype.slice.call(arguments).map(function(a) {
+            try { return typeof a === 'object' ? JSON.stringify(a) : String(a); } catch(e) { return String(a); }
+          }).join(' ');
+          if (isIgnored(all)) return;
+          ow.apply(console, arguments);
+        };
+        console.error = function() {
+          var all = Array.prototype.slice.call(arguments).map(function(a) {
+            try { return typeof a === 'object' ? JSON.stringify(a) : String(a); } catch(e) { return String(a); }
+          }).join(' ');
+          if (isIgnored(all)) return;
+          oe.apply(console, arguments);
+        };
+      })();
+    </script>
+  </head>
+  <body class="bg-neutral-100 text-neutral-900 antialiased selection:bg-blue-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "HCM4 tra linh kiện in tem & đặt chờ linh kiện",
+  "description": "Ứng dụng chuyên nghiệp thiết kế và in tem linh kiện, nhãn mã vạch và QR code chuẩn khổ 3x2 inch từ dữ liệu Excel hoặc nhập trực tiếp.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

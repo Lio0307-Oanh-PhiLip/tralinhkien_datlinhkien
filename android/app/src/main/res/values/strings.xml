@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HCM4 Tra Cứu &amp; Đặt Chờ Linh Kiện</string>
+    <string name="title_activity_main">HCM4 Tra Cứu &amp; Đặt Chờ Linh Kiện</string>
+    <string name="package_name">com.hcm4.oppo.labelstudio</string>
+    <string name="custom_url_scheme">com.hcm4.oppo.labelstudio</string>
+</resources>

@@ -1,0 +1,17 @@
+{
+  "appId": "com.hcm4.oppo.labelstudio",
+  "appName": "HCM4 Tra Cứu & Đặt Chờ Linh Kiện",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "buildOptions": {
+      "keystorePath": "release-key.jks",
+      "keystoreAlias": "hcm4key"
+    }
+  }
+}

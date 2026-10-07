@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="labelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <filter id="dropGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#06b6d4" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Base App Rounded Container -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)" stroke="#334155" stroke-width="6" />
+
+  <!-- Outer Neon Glow Border -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="none" stroke="url(#accentGrad)" stroke-width="8" opacity="0.85" />
+
+  <!-- Label Paper Card -->
+  <g filter="url(#dropGlow)">
+    <rect x="110" y="96" width="292" height="320" rx="24" fill="url(#labelGrad)" stroke="#cbd5e1" stroke-width="4" />
+    
+    <!-- Top Label Header Bar -->
+    <path d="M 110 120 Q 110 96 134 96 L 378 96 Q 402 96 402 120 L 402 150 L 110 150 Z" fill="#0f172a" />
+    
+    <!-- Brand / Status Dots -->
+    <circle cx="140" cy="123" r="7" fill="#10b981" />
+    <circle cx="162" cy="123" r="7" fill="#06b6d4" />
+    <rect x="260" y="117" width="118" height="12" rx="6" fill="#475569" />
+
+    <!-- QR Code Block Left -->
+    <g transform="translate(136, 172)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#0f172a" />
+      <!-- QR Finder Pattern Top-Left -->
+      <rect x="8" y="8" width="26" height="26" rx="4" fill="#ffffff" />
+      <rect x="13" y="13" width="16" height="16" rx="2" fill="#0f172a" />
+      <!-- QR Finder Pattern Top-Right -->
+      <rect x="46" y="8" width="26" height="26" rx="4" fill="#ffffff" />
+      <rect x="51" y="13" width="16" height="16" rx="2" fill="#0f172a" />
+      <!-- QR Finder Pattern Bottom-Left -->
+      <rect x="8" y="46" width="26" height="26" rx="4" fill="#ffffff" />
+      <rect x="13" y="51" width="16" height="16" rx="2" fill="#0f172a" />
+      <!-- QR Data Cells -->
+      <rect x="46" y="46" width="12" height="12" rx="2" fill="#10b981" />
+      <rect x="62" y="58" width="10" height="14" rx="2" fill="#06b6d4" />
+    </g>
+
+    <!-- Label Text Lines Right -->
+    <g transform="translate(232, 178)">
+      <rect x="0" y="0" width="146" height="16" rx="4" fill="#0f172a" />
+      <rect x="0" y="24" width="110" height="12" rx="4" fill="#64748b" />
+      <rect x="0" y="44" width="130" height="12" rx="4" fill="#0284c7" />
+      <rect x="0" y="64" width="70" height="16" rx="4" fill="#10b981" />
+    </g>
+
+    <!-- Divider Line -->
+    <line x1="130" y1="272" x2="382" y2="272" stroke="#e2e8f0" stroke-width="3" stroke-dasharray="6,4" />
+
+    <!-- Barcode Strip at Bottom -->
+    <g transform="translate(136, 290)">
+      <!-- Bars of varying widths -->
+      <rect x="0" y="0" width="6" height="68" rx="2" fill="#0f172a" />
+      <rect x="10" y="0" width="12" height="68" rx="2" fill="#0f172a" />
+      <rect x="26" y="0" width="4" height="68" rx="2" fill="#0f172a" />
+      <rect x="34" y="0" width="14" height="68" rx="2" fill="#0f172a" />
+      <rect x="52" y="0" width="8" height="68" rx="2" fill="#0f172a" />
+      <rect x="64" y="0" width="4" height="68" rx="2" fill="#0f172a" />
+      <rect x="72" y="0" width="16" height="68" rx="2" fill="#0f172a" />
+      <rect x="92" y="0" width="6" height="68" rx="2" fill="#0f172a" />
+      <rect x="102" y="0" width="10" height="68" rx="2" fill="#0f172a" />
+      <rect x="116" y="0" width="4" height="68" rx="2" fill="#0f172a" />
+      <rect x="124" y="0" width="14" height="68" rx="2" fill="#0f172a" />
+      <rect x="142" y="0" width="8" height="68" rx="2" fill="#0f172a" />
+      <rect x="154" y="0" width="16" height="68" rx="2" fill="#0f172a" />
+      <rect x="174" y="0" width="6" height="68" rx="2" fill="#0f172a" />
+      <rect x="184" y="0" width="12" height="68" rx="2" fill="#0f172a" />
+      <rect x="200" y="0" width="4" height="68" rx="2" fill="#0f172a" />
+      <rect x="208" y="0" width="14" height="68" rx="2" fill="#0f172a" />
+      <rect x="226" y="0" width="14" height="68" rx="2" fill="#0f172a" />
+    </g>
+
+    <!-- Barcode Human-Readable Text Code -->
+    <text x="256" y="388" font-family="monospace" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle" letter-spacing="4">OPPO-621033</text>
+  </g>
+
+  <!-- Green Laser Scan Line Effect -->
+  <g>
+    <line x1="86" y1="212" x2="426" y2="212" stroke="#10b981" stroke-width="4" stroke-linecap="round" opacity="0.95" />
+    <circle cx="86" cy="212" r="5" fill="#10b981" />
+    <circle cx="426" cy="212" r="5" fill="#10b981" />
+  </g>
+</svg>
